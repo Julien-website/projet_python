@@ -10,7 +10,7 @@ def liste_donnees(code_commune=None,taille_echantillon=3000):
             "_id", "consommation_energie", "classe_consommation_energie", "surface_thermique_lot",
             "estimation_ges", "classe_estimation_ges",
             "annee_construction", "tr002_type_batiment_description",
-            "code_insee_commune_actualise", "geo_adresse"
+            "code_insee_commune_actualise", "geo_adresse", "latitude", "longitude"
         ]),
         "q": f"code_insee_commune_actualise:{code_commune}" if code_commune else None,
     }
@@ -34,6 +34,8 @@ def liste_donnees(code_commune=None,taille_echantillon=3000):
                 'annee_construction': entry.get('annee_construction'),
                 'tr002_type_batiment_description': entry.get('tr002_type_batiment_description'),
                 'code_insee_commune_actualise': entry.get('code_insee_commune_actualise'),
+                'latitude': entry.get('latitude'),
+                'longitude': entry.get('longitude'),
                 'geo_adresse': entry.get('geo_adresse'),
                 # Ajoutez d'autres colonnes pertinentes selon vos besoins
             }
